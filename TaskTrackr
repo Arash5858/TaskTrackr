@@ -1,0 +1,67 @@
+tasktrackr/
+├── README.md
+└── tasktrackr.py
+class TaskManager:
+    def __init__(self):
+        self.tasks = []
+
+    def add_task(self, title):
+        self.tasks.append({"title": title, "completed": False})
+        print(f"Task added: {title}")
+
+    def list_tasks(self):
+        if not self.tasks:
+            print("No tasks available.")
+            return
+
+        for index, task in enumerate(self.tasks, start=1):
+            status = "Done" if task["completed"] else "Pending"
+            print(f"{index}. {task['title']} [{status}]")
+
+    def complete_task(self, task_number):
+        try:
+            self.tasks[task_number - 1]["completed"] = True
+            print("Task marked as completed.")
+        except IndexError:
+            print("Invalid task number.")
+
+
+def main():
+    manager = TaskManager()
+
+    while True:
+        print("\n1. Add Task\n2. List Tasks\n3. Complete Task\n4. Exit")
+        choice = input("Select an option: ")
+
+        if choice == "1":
+            title = input("Enter task title: ")
+            manager.add_task(title)
+        elif choice == "2":
+            manager.list_tasks()
+        elif choice == "3":
+            number = int(input("Enter task number: "))
+            manager.complete_task(number)
+        elif choice == "4":
+            print("Goodbye.")
+            break
+        else:
+            print("Invalid choice.")
+
+
+if __name__ == "__main__":
+    main()
+# TaskTrackr
+
+TaskTrackr is a simple command-line task management tool built with Python.
+
+## Features
+- Add new tasks
+- List existing tasks
+- Mark tasks as completed
+
+## Requirements
+- Python 3.7+
+
+## How to Run
+```bash
+python tasktrackr.py
