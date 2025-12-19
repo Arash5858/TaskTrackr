@@ -13,7 +13,9 @@ class TaskManager:
         if not self.tasks:
             print("No tasks available.")
             return
-
+└── tasktrackr.py
+class TaskManager:
+    def __init__(
         for index, task in enumerate(self.tasks, start=1):
             status = "Done" if task["completed"] else "Pending"
             print(f"{index}. {task['title']} [{status}]")
