@@ -55,7 +55,9 @@ if __name__ == "__main__":
 # TaskTrackr
 
 TaskTrackr is a simple command-line task management tool built with Python.
-
+ index, task in enumerate(self.tasks, start=1):
+            status = "Done" if task["completed"] else "Pending"
+            print(f"{index}. {task['title']} [{status}]")
 ## Features
 - Add new tasks
 - List existing tasks
