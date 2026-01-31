@@ -62,6 +62,9 @@ TaskTrackr is a simple command-line task management tool built with Python.
 - Add new tasks
 - List existing tasks
 - Mark tasks as completed
+def add_task(self, title):
+        self.tasks.append({"title": title, "completed": False})
+        print(f"Task added: {title}")
 
 ## Requirements
 - Python 3.7+
