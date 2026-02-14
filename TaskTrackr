@@ -66,6 +66,11 @@ def add_task(self, title):
         self.tasks.append({"title": title, "completed": False})
         print(f"Task added: {title}")
 
+        if choice == "1":
+            title = input("Enter task title: ")
+            manager.add_task(title)
+        elif choice == "2":
+            manager.list_tasks()
 ## Requirements
 - Python 3.7+
 
