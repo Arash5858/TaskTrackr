@@ -3,12 +3,7 @@ tasktrackr/
 └── tasktrackr.py
 class TaskManager:
     def __init__(self):
-        self.tasks = []
-
-    def add_task(self, title):
-        self.tasks.append({"title": title, "completed": False})
-        print(f"Task added: {title}")
-
+    
     def list_tasks(self):
         if not self.tasks:
             print("No tasks available.")
@@ -26,6 +21,11 @@ class TaskManager:
             print("Task marked as completed.")
         except IndexError:
             print("Invalid task number.")
+    self.tasks = []
+
+    def add_task(self, title):
+        self.tasks.append({"title": title, "completed": False})
+        print(f"Task added: {title}")
 
 
 def main():
